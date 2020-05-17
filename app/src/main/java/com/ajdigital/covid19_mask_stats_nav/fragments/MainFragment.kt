@@ -10,6 +10,7 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 
 import com.ajdigital.covid19_mask_stats_nav.R
+import kotlinx.android.synthetic.main.fragment_add_record.*
 import kotlinx.android.synthetic.main.fragment_main.*
 
 class MainFragment : Fragment() {
@@ -27,11 +28,12 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
-        add_record.setOnClickListener{
+        add_record.setOnClickListener {
             navController.navigate(R.id.action_mainFragment_to_addRecord)
         }
-        upload_records.setOnClickListener{
-            Toast.makeText(activity,"Not implemented yet",Toast.LENGTH_SHORT).show()
+        upload_records.setOnClickListener {
+            Toast.makeText(activity, "Not implemented yet", Toast.LENGTH_SHORT).show()
         }
     }
+
 }

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="voivodeship_list">
+        <item>dolnośląskie</item>
+        <item>kujawsko-pomorskie</item>
+        <item>lubelskie</item>
+        <item>lubuskie</item>
+        <item>łódzkie</item>
+        <item>małopolskie</item>
+        <item>mazowieckie</item>
+        <item>opolskie</item>
+        <item>podkarpackie</item>
+        <item>podlaskie</item>
+        <item>pomorskie</item>
+        <item>śląskie</item>
+        <item>świętokrzyskie</item>
+        <item>warmińsko-mazurskie</item>
+        <item>wielkopolskie</item>
+        <item>zachodniopomorskie</item>
+    </string-array>
+
+    <string-array name="age_array">
+        <item>0-10</item>
+        <item>11-25</item>
+        <item>26-45</item>
+        <item>46-59</item>
+        <item>60+</item>
+    </string-array>
+
+    <string-array name="invalid_mask_reasons">
+        <item>Odkryty nos</item>
+        <item>Maska na brodzie</item>
+    </string-array>
+</resources>

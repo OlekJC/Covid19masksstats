@@ -7,12 +7,13 @@
     tools:context=".fragments.AddRecord"
     android:gravity="center">
 
+
     <Spinner
         android:padding="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/voivodeships_selector" />
-        <!--android:entries="@array/voivodeships_list" />-->
+        android:id="@+id/voivodeships_selector"
+        android:entries="@array/voivodeship_list"/>
     <RadioGroup
         android:padding="20dp"
         android:layout_width="wrap_content"
@@ -35,8 +36,8 @@
         android:padding="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/age_spinner" />
-       <!-- //android:entries="@array/age_array" />-->
+        android:id="@+id/age_spinner"
+        android:entries="@array/age_array"/>
     <Switch
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -47,20 +48,21 @@
         android:padding="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/is_mask_correct"
-        android:text="Czy maska jest poprawnie założona ? " />
+        android:id="@+id/is_mask_correct_switch"
+        android:text="Czy maska jest poprawnie założona ? "
+        android:enabled="false"/>
 
     <Spinner
         android:padding="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/invalid_mask_reason" />
-        <!--//android:entries="@array/invalid_mask_reason" />-->
+        android:id="@+id/invalid_mask_reason"
+        android:entries="@array/invalid_mask_reasons"
+        />
     <Button
         android:paddingVertical="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/submit_button"
         android:text="Zapisz wynik" />
-
 </LinearLayout>
