@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragments.AddRecord"
+    android:gravity="center">
+
+    <Spinner
+        android:padding="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/voivodeships_selector" />
+        <!--android:entries="@array/voivodeships_list" />-->
+    <RadioGroup
+        android:padding="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/woman_button"
+            android:text="Kobieta" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/man_button"
+            android:text="Mężczyzna" />
+    </RadioGroup>
+
+    <Spinner
+        android:padding="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/age_spinner" />
+       <!-- //android:entries="@array/age_array" />-->
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/has_mask_switch"
+        android:text="Czy ma maskę? "
+        android:padding="20dp"/>
+    <Switch
+        android:padding="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/is_mask_correct"
+        android:text="Czy maska jest poprawnie założona ? " />
+
+    <Spinner
+        android:padding="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/invalid_mask_reason" />
+        <!--//android:entries="@array/invalid_mask_reason" />-->
+    <Button
+        android:paddingVertical="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/submit_button"
+        android:text="Zapisz wynik" />
+
+</LinearLayout>
