@@ -20,15 +20,22 @@
     </string-array>
 
     <string-array name="age_array">
-        <item>0-10</item>
-        <item>11-25</item>
-        <item>26-45</item>
-        <item>46-59</item>
+        <item>0–10</item>
+        <item>11–25</item>
+        <item>26–45</item>
+        <item>46–59</item>
         <item>60+</item>
     </string-array>
 
     <string-array name="invalid_mask_reasons">
         <item>Odkryty nos</item>
         <item>Maska na brodzie</item>
+    </string-array>
+
+    <string-array name="city_sizes_list" >
+        <item>0–50tyś</item>
+        <item>50tyś-250tyś</item>
+        <item>250tyś-1mln</item>
+        <item>1mln+</item>
     </string-array>
 </resources>
