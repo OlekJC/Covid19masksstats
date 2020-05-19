@@ -9,6 +9,7 @@ data class MaskRecord constructor(
     var hasMaskOn : Boolean,
     var isMaskCorrectlyOn : Boolean?,
     var reasonOfInvalidMask : String?
+    //var typess: Array<SEX> = SEX.values().toString()
 ) {
     enum class SEX{
         MALE,FEMALE

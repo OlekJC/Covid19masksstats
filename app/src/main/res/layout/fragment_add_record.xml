@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:hint="Miasto">
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/city_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -32,6 +33,7 @@
         android:padding="20dp" />
 
     <RadioGroup
+        android:id="@+id/sex_radio_group"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -73,7 +75,7 @@
         android:text="Czy maska jest poprawnie założona ? " />
 
     <Spinner
-        android:id="@+id/invalid_mask_reason"
+        android:id="@+id/invalid_mask_reason_spinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:entries="@array/invalid_mask_reasons"
