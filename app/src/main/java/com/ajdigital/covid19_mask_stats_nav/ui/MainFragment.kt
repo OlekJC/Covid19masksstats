@@ -1,4 +1,4 @@
-package com.ajdigital.covid19_mask_stats_nav.fragments
+package com.ajdigital.covid19_mask_stats_nav.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,22 +6,26 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 
 import com.ajdigital.covid19_mask_stats_nav.R
-import kotlinx.android.synthetic.main.fragment_add_record.*
+import com.ajdigital.covid19_mask_stats_nav.data.database.MaskRecord
+import com.ajdigital.covid19_mask_stats_nav.data.viewmodel.StatisticsViewModel
 import kotlinx.android.synthetic.main.fragment_main.*
 
 class MainFragment : Fragment() {
 
-    lateinit var navController: NavController
+    private lateinit var navController: NavController
+    private lateinit var viewModel : StatisticsViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_main, container, false)
     }
 
@@ -34,6 +38,11 @@ class MainFragment : Fragment() {
         upload_records.setOnClickListener {
             Toast.makeText(activity, "Not implemented yet", Toast.LENGTH_SHORT).show()
         }
-    }
 
+        viewModel = ViewModelProvider(this).get(StatisticsViewModel::class.java)
+
+        viewModel.records.observe(viewLifecycleOwner, Observer {
+            records_tv.text = "Masz ${it.size} rekordów"
+        })
+    }
 }

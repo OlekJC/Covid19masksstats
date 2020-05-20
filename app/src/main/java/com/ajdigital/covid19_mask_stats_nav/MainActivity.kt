@@ -2,7 +2,7 @@ package com.ajdigital.covid19_mask_stats_nav
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.ajdigital.covid19_mask_stats_nav.data.MaskRecord
+import com.ajdigital.covid19_mask_stats_nav.data.database.MaskRecord
 
 class MainActivity : AppCompatActivity() {
 

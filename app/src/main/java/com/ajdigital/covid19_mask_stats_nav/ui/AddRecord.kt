@@ -1,4 +1,4 @@
-package com.ajdigital.covid19_mask_stats_nav.fragments
+package com.ajdigital.covid19_mask_stats_nav.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,7 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.ajdigital.covid19_mask_stats_nav.MainActivity
 import com.ajdigital.covid19_mask_stats_nav.R
-import com.ajdigital.covid19_mask_stats_nav.data.MaskRecord
+import com.ajdigital.covid19_mask_stats_nav.data.database.MaskRecord
 import kotlinx.android.synthetic.main.fragment_add_record.*
 
 class AddRecord : Fragment() {
@@ -56,19 +56,19 @@ class AddRecord : Fragment() {
 
         val wrongMaskReason = if(is_mask_correct_switch.isChecked)
             null else invalid_mask_reason_spinner.selectedItem.toString()
-        val sex : MaskRecord.SEX = if(woman_button.isChecked) MaskRecord.SEX.FEMALE else MaskRecord.SEX.MALE
+        val sex = if(woman_button.isChecked) "Kobieta" else "Mężczyzna"
 
-        val record = MaskRecord(
-            city_edit_text.text.toString(),
-            city_size_spinner.selectedItem.toString(),
-            voivodeships_selector.selectedItem.toString(),
-            sex,
-            age_spinner.selectedItem.toString(),
-            has_mask_switch.isChecked,
-            is_mask_correct_switch.isChecked,
-            wrongMaskReason
-
-        )
+        val record =
+            MaskRecord(
+                city_edit_text.text.toString(),
+                city_size_spinner.selectedItem.toString(),
+                voivodeships_selector.selectedItem.toString(),
+                sex,
+                age_spinner.selectedItem.toString(),
+                has_mask_switch.isChecked,
+                is_mask_correct_switch.isChecked,
+                wrongMaskReason
+            )
         //showErrorDialog(record.toString())
         (activity as MainActivity).r = record
         showErrorDialog((activity as MainActivity).r.toString())
