@@ -1,17 +1,24 @@
 package com.ajdigital.covid19_mask_stats_nav.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.ajdigital.covid19_mask_stats_nav.MainActivity
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import com.ajdigital.covid19_mask_stats_nav.R
 import com.ajdigital.covid19_mask_stats_nav.data.database.MaskRecord
+import com.ajdigital.covid19_mask_stats_nav.data.viewmodel.StatisticsViewModel
 import kotlinx.android.synthetic.main.fragment_add_record.*
 
 class AddRecord : Fragment() {
+    val TAG = "AddRecord"
+    private lateinit var viewModel : StatisticsViewModel
+    private lateinit var navController: NavController
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,6 +30,8 @@ class AddRecord : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        navController = Navigation.findNavController(view)
+        viewModel = ViewModelProvider(this).get(StatisticsViewModel::class.java)
         prepareUI()
     }
 
@@ -69,9 +78,9 @@ class AddRecord : Fragment() {
                 is_mask_correct_switch.isChecked,
                 wrongMaskReason
             )
-        //showErrorDialog(record.toString())
-        (activity as MainActivity).r = record
-        showErrorDialog((activity as MainActivity).r.toString())
+        viewModel.insertRecord(record)
+        showErrorDialog("Record inserted")
+        navController.navigate(R.id.action_addRecord_to_mainFragment)
     }
 
     private fun showErrorDialog(msg: String) {
