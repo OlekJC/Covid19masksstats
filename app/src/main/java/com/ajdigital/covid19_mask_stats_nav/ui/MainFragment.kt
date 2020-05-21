@@ -39,6 +39,10 @@ class MainFragment : Fragment() {
             Toast.makeText(activity, "Not implemented yet", Toast.LENGTH_SHORT).show()
         }
 
+        records_list_btn.setOnClickListener{
+            navController.navigate(R.id.action_mainFragment_to_showRecordsFragment)
+        }
+
         viewModel = ViewModelProvider(this).get(StatisticsViewModel::class.java)
 
         viewModel.records.observe(viewLifecycleOwner, Observer {

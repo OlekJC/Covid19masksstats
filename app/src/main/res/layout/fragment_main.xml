@@ -26,4 +26,10 @@
         android:id="@+id/upload_records"
         android:text="Wyślij dane" />
 
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/records_list_btn"
+        android:text="Lista rekordów" />
+
 </LinearLayout>
