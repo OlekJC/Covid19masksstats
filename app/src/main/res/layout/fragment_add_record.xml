@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".ui.AddRecord">
+    tools:context=".ui.add_record.AddRecord">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/city_text_field"

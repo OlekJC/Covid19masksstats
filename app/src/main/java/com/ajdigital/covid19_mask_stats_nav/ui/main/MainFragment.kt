@@ -1,4 +1,4 @@
-package com.ajdigital.covid19_mask_stats_nav.ui
+package com.ajdigital.covid19_mask_stats_nav.ui.main
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,14 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 
 import com.ajdigital.covid19_mask_stats_nav.R
-import com.ajdigital.covid19_mask_stats_nav.data.database.MaskRecord
 import com.ajdigital.covid19_mask_stats_nav.data.viewmodel.StatisticsViewModel
 import kotlinx.android.synthetic.main.fragment_main.*
 

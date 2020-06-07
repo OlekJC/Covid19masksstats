@@ -1,4 +1,4 @@
-package com.ajdigital.covid19_mask_stats_nav.ui
+package com.ajdigital.covid19_mask_stats_nav.ui.records
 
 import android.content.Context
 import android.os.Bundle
@@ -14,8 +14,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.ajdigital.covid19_mask_stats_nav.R
 import com.ajdigital.covid19_mask_stats_nav.data.viewmodel.StatisticsViewModel
 
-import com.ajdigital.covid19_mask_stats_nav.ui.dummy.DummyContent
-import com.ajdigital.covid19_mask_stats_nav.ui.dummy.DummyContent.DummyItem
+//import com.ajdigital.covid19_mask_stats_nav.ui.dummy.DummyContent.DummyItem
 
 /**
  * A fragment representing a list of Items.
@@ -43,7 +42,10 @@ class ShowRecordsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel.records.observe(viewLifecycleOwner, Observer {
-            (view as RecyclerView).adapter = MyRecordRecyclerViewAdapter(it)
+            (view as RecyclerView).adapter =
+                MyRecordRecyclerViewAdapter(
+                    it
+                )
         })
     }
 
@@ -94,7 +96,7 @@ class ShowRecordsFragment : Fragment() {
      */
     interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
-        fun onListFragmentInteraction(item: DummyItem?)
+        //fun onListFragmentInteraction(item: DummyItem?)
     }
 
     companion object {
@@ -105,7 +107,8 @@ class ShowRecordsFragment : Fragment() {
         // TODO: Customize parameter initialization
         @JvmStatic
         fun newInstance(columnCount: Int) =
-            ShowRecordsFragment().apply {
+            ShowRecordsFragment()
+                .apply {
                 arguments = Bundle().apply {
                     putInt(ARG_COLUMN_COUNT, columnCount)
                 }

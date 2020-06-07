@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.ajdigital.covid19_mask_stats_nav.ui.MainFragment"
+        android:name="com.ajdigital.covid19_mask_stats_nav.ui.main.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main">
         <action
@@ -28,7 +28,7 @@
 
     <fragment
         android:id="@+id/addRecord"
-        android:name="com.ajdigital.covid19_mask_stats_nav.ui.AddRecord"
+        android:name="com.ajdigital.covid19_mask_stats_nav.ui.add_record.AddRecord"
         android:label="fragment_add_record"
         tools:layout="@layout/fragment_add_record" >
         <action
@@ -37,7 +37,7 @@
     </fragment>
     <fragment
         android:id="@+id/showRecordsFragment"
-        android:name="com.ajdigital.covid19_mask_stats_nav.ui.ShowRecordsFragment"
+        android:name="com.ajdigital.covid19_mask_stats_nav.ui.records.ShowRecordsFragment"
         android:label="fragment_show_records_list"
         tools:layout="@layout/fragment_show_records_list" />
 </navigation>

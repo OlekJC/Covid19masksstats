@@ -1,4 +1,4 @@
-package com.ajdigital.covid19_mask_stats_nav.ui
+package com.ajdigital.covid19_mask_stats_nav.ui.records
 
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
@@ -9,8 +9,7 @@ import com.ajdigital.covid19_mask_stats_nav.R
 import com.ajdigital.covid19_mask_stats_nav.data.database.MaskRecord
 
 
-import com.ajdigital.covid19_mask_stats_nav.ui.ShowRecordsFragment.OnListFragmentInteractionListener
-import com.ajdigital.covid19_mask_stats_nav.ui.dummy.DummyContent.DummyItem
+import com.ajdigital.covid19_mask_stats_nav.ui.records.ShowRecordsFragment.OnListFragmentInteractionListener
 
 import kotlinx.android.synthetic.main.fragment_show_records.view.*
 
@@ -43,25 +42,27 @@ class MyRecordRecyclerViewAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = mValues[position]
-        val isMaskOnString = if(item.hasMaskOn) "Tak" else "Nie"
+        val isMaskOnString = if (item.hasMaskOn) "Tak" else "Nie"
         var isMaskCorrectlyOnString = ""
-        if(item.isMaskCorrectlyOn != null) {
-            isMaskCorrectlyOnString = "Czy maska jest założona poprawnie? " + if(item.isMaskCorrectlyOn!!) "Tak" else "Nie" + "\n"
+        if (item.isMaskCorrectlyOn != null) {
+            isMaskCorrectlyOnString =
+                "Czy maska jest założona poprawnie? " + if (item.isMaskCorrectlyOn!!) "Tak" else "Nie" + "\n"
         }
 
         var reasonOfInvalidMaskString = ""
-        if(item.reasonOfInvalidMask != null){
-            reasonOfInvalidMaskString = "Powód złego założenia maski: ${item.reasonOfInvalidMask}" + "\n"
+        if (item.reasonOfInvalidMask != null) {
+            reasonOfInvalidMaskString =
+                "Powód złego założenia maski: ${item.reasonOfInvalidMask}" + "\n"
         }
 
         holder.mContentView.text =
-                "Miasto: ${item.cityName}\n" +
-                "Wielkość: ${item.citySize}\n" +
-                "Płeć: ${item.sex}\n" +
-                        "Wiek: ${item.ageRange}\n" +
-                "Czy nosi maskę: $isMaskOnString\n" +
-                "$isMaskCorrectlyOnString" +
-                "$reasonOfInvalidMaskString"
+                    "Miasto: ${item.cityName}\n" +
+                    "Wielkość: ${item.citySize}\n" +
+                    "Płeć: ${item.sex}\n" +
+                    "Wiek: ${item.ageRange}\n" +
+                    "Czy nosi maskę: $isMaskOnString\n" +
+                    "$isMaskCorrectlyOnString" +
+                    "$reasonOfInvalidMaskString"
 
         with(holder.mView) {
             tag = item

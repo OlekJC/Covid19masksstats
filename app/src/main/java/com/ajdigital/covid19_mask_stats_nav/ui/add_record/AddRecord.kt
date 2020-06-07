@@ -1,7 +1,6 @@
-package com.ajdigital.covid19_mask_stats_nav.ui
+package com.ajdigital.covid19_mask_stats_nav.ui.add_record
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
