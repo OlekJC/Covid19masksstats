@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/login">
 
     <fragment
         android:id="@+id/mainFragment"
@@ -40,4 +40,14 @@
         android:name="com.ajdigital.covid19_mask_stats_nav.ui.records.ShowRecordsFragment"
         android:label="fragment_show_records_list"
         tools:layout="@layout/fragment_show_records_list" />
+    <fragment
+        android:id="@+id/login"
+        android:name="com.ajdigital.covid19_mask_stats_nav.ui.login.Login"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_login_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:launchSingleTop="true" />
+    </fragment>
 </navigation>
